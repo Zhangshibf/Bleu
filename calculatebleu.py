@@ -10,16 +10,15 @@ import json
 def fetch_data(cand, ref):
     """ Store each reference and candidate sentences as a list """
     references = []
-    if '.txt' in ref:
-        reference_file = codecs.open(ref, 'r', encoding = 'utf-8')
-        references.append(reference_file.readlines())
-    else:
-        for root, dirs, files in os.walk(ref):
-            for f in files:
-                reference_file = codecs.open(os.path.join(root, f), 'r', 'utf-8')
-                references.append(reference_file.readlines())
+    reference_file = codecs.open(ref, 'r', encoding = 'utf-8')
+    text = reference_file.read()
+    references = text.split("\n")
+#        references.append(reference_file.readlines())
+
     candidate_file = codecs.open(cand, 'r', 'utf-8')
-    candidate = candidate_file.readlines()
+    text = candidate_file.read()
+    candidate = text.split("\n")
+#    candidate = candidate_file.readlines()
     return candidate, references
 
 
