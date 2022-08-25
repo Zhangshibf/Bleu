@@ -11,7 +11,7 @@ def fetch_data(cand, ref):
     """ Store each reference and candidate sentences as a list """
     references = []
     if '.txt' in ref:
-        reference_file = codecs.open(ref, 'r', 'utf-8')
+        reference_file = codecs.open(ref, 'r', encoding = 'utf-8')
         references.append(reference_file.readlines())
     else:
         for root, dirs, files in os.walk(ref):
