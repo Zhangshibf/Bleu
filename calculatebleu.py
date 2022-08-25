@@ -10,12 +10,12 @@ import json
 def fetch_data(cand, ref):
     """ Store each reference and candidate sentences as a list """
     references = []
-    reference_file = codecs.open(ref, 'r', encoding = 'utf-8')
+    reference_file = open(ref, 'r', encoding = 'utf-8')
     text = reference_file.read()
     references = text.split("\n")
 #        references.append(reference_file.readlines())
 
-    candidate_file = codecs.open(cand, 'r', 'utf-8')
+    candidate_file = open(cand, 'r', 'utf-8')
     text = candidate_file.read()
     candidate = text.split("\n")
 #    candidate = candidate_file.readlines()
