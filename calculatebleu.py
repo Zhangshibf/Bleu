@@ -4,6 +4,7 @@ import os
 import math
 import operator
 import json
+from functools import reduce
 
 
 
